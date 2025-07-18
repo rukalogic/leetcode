@@ -8,5 +8,8 @@ class Solution:
             else:
                 current = nums[i]
                 no_of_unique += 1
-        nums[:] = [x for x in nums if isinstance(x, int)]
+        for i in range(len(nums) - 1, -1, -1):
+            if not isinstance(nums[i], int):
+                nums.pop(i)
+
         return no_of_unique
