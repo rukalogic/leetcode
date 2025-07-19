@@ -2,7 +2,7 @@ class Solution:
     def addBinary(self, a: str, b: str) -> str:
         a_dec = 0
         b_dec = 0
-        answer =''
+        answer = []
         for i in range(len(a)):
             a_dec += int(a[i])
             if i != len(a)-1:
@@ -13,8 +13,10 @@ class Solution:
                 b_dec *= 2
         sum = a_dec + b_dec
         while sum > 0:
-             answer = str(sum%2) + answer
+             answer.append(str(sum%2))
              sum //= 2
         if not answer:
             answer = '0'
-        return answer 
+            return answer 
+        answer2 = ''.join(answer)[::-1]
+        return answer2
