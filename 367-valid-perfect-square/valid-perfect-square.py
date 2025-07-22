@@ -8,5 +8,5 @@ class Solution:
             if abs(new_sqrt - sqrt) < 1e-6:
                 break
             sqrt = new_sqrt
-        return round(sqrt, 5) == int(sqrt)
+        return int(sqrt) * int(sqrt) == num
             
