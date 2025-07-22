@@ -1,11 +1,12 @@
 class Solution:
     def mySqrt(self, x: int) -> int:
-        sqrt = int(x / 2)
+        if x < 2:
+            return x 
+        sqrt = x/2      
         while True:
-            if sqrt == 0:
-                return x
             sqrt = (sqrt+ x/sqrt)/2
-            if int(sqrt) * int(sqrt) <= x < (int(sqrt) + 1) * (int(sqrt) + 1):
-                return int(sqrt)
+            int_sqrt = int(sqrt)
+            if int_sqrt * int_sqrt <= x < (int_sqrt + 1) * (int_sqrt + 1):
+                return int_sqrt
 
         
